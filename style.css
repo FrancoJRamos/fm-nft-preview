@@ -1,0 +1,76 @@
+/*Font Import*/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/*Style reset*/
+*
+{
+    padding:0;
+    margin:0;
+    border:0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/*front end mentor styles*/
+.attribution 
+{ 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a 
+{ 
+    color: hsl(228, 45%, 44%); 
+}
+
+/*General Body Styles*/
+body
+{
+    background-color: hsl(217,54%,11%);
+    color: hsl(215, 51%, 70%);
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+a
+{
+    color:hsl(0, 0%, 100%);
+}
+img
+{
+    padding-right:0.25rem;
+    vertical-align: baseline;
+}
+p
+{
+    font-weight: 300;
+}
+
+/*Class Styles*/
+.card
+{
+    width:325px;
+    background-color:hsl(216, 50%, 16%);
+    padding:25px 20px;
+    border-radius: 25px;
+}
+.card a
+{
+    font-weight:600;
+    
+}
+.card-icon
+{
+    max-width:100%;
+    height:auto;
+    border-radius: 15px;
+}
+.etherium-cost
+{
+    color: hsl(178, 100%, 50%);
+    
+}
+.user-information, .user-information a
+{
+    font-weight: 300;
+}
