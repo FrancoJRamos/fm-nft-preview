@@ -36,50 +36,82 @@
     {
         color:hsl(0, 0%, 100%);
     }
-    img
-    {
-        padding-right:0.25rem;
-        vertical-align: baseline;
-    }
+   
     p
     {
         font-weight: 300;
         line-height: 1.5;
-        padding-bottom:15px;
+        margin-bottom:15px;
     }
     hr
     {
         width:100%;
-        border-top:1px solid hsl(215, 51%, 70%);
-        padding-bottom: 10px;
+        border-top:1px solid hsl(215, 32%, 27%);
+        margin-bottom: 20px;
 }
 /*Class Styles*/
+    .color-block
+    {
+        background-color:hsl(217,54%,11%);
+        height:250px;
+    }
+
     .card
     {
         width:325px;
-        background-color:hsl(216, 50%, 16%);
+        max-height: 600px;
+        background-color:hsl(215, 51%, 16%);
         padding:25px 20px;
         border-radius: 25px;
         margin:auto;
+        box-shadow:0 0 50px 10px  hsl(217, 60%, 8%);
+        margin-bottom:50px;
     }
     .card a
     {
         font-weight:600;
         display:block;
-        padding-bottom:10px;
+        margin-bottom:10px;
+        
     }
     .card-icon
     {
+         outline:solid 1px white;
+       border-radius:15px;
+    }
+    .card a img
+    {
         max-width:100%;
         height:auto;
-        border-radius: 15px;
-        padding-bottom:10px;
+        border-radius:15px;
     }
+    .icon-interactive /*last step trying to figure out how to overlay this div over the icon image
+    and can then re-enable the opacity rule to match the interactivity*/
+    {
+        
+        width:inherit;
+        height:inherit;
+        /* opacity:0; */
+        transition: opacity 0.5s;
+        background-color: hsla(178, 100%, 50%,50%);
+        outline:solid 1px red;
+        z-index:2;
+        
+    }
+    .icon-interactive img
+   {
+        position:absolute;
+        top:42%;
+        left:50%;
+        background-color: hsla(178, 100%, 50%,50%);
+        
+   }
+    
     .purchase-information
     {
         display:flex;
         justify-content: space-between;
-        padding-bottom:10px;
+        margin-bottom:20px;
     }
     .etherium-cost
     {
@@ -89,11 +121,11 @@
     .user-information
     {
         width:100%;
-        outline:1px solid green;
         display:flex;
         align-items: center;
-        /* padding-bottom:15px; */
-        margin-bottom:15px;
+        padding-bottom:0;
+        margin-bottom:8px;
+        /* outline:solid red 1px; */
     }
     
     .user-information, .user-information a
@@ -102,7 +134,18 @@
     }
     .card .user-information a
     {
-        padding-bottom:0;
+        padding-top:10px;
+    }
+   
+    .avatar-icon img
+    {
+        height:inherit;
+        object-fit: contain;
+        margin-right:1rem;
+        vertical-align: baseline;
+        height:30px;
+        border:hsl(0, 0%, 100%) 1px solid;
+        border-radius:30px;
     }
 /*Feedback Effects*/
     .user-information a, .card a
@@ -114,10 +157,31 @@
     {
         color:hsl(178, 100%, 50%);
     }
-
+    .card-icon:hover .icon-interactive
+    {
+        opacity:1;
+    }
 /* To Do List 7.5.22
     implement hover icon behavior
     center item vertically on page
     Add White border to avatar image
     review spacing on avatar section     
 */
+
+/*     To Do List 7.10.22
+    Only element left to edit is the interactivity on the icon image,
+    have been trying to implement something that inherits the height 
+    and width from the image since its values are soft codded in and am unable to 
+    get an exact measurement.
+    The width isn't a problem since its just 100% of the parent div but the height is a problem
+
+    The other thing that's a pain in my side is trying to get the overlay 
+    of the interactive div and the image working. I've tried positioning 
+    attributes: the ones that remove the block from the flow of the page
+    doesn't have any correlation to the rest of the elements which makes it harder
+    to format the placement of the elements correctly.
+    There's a way to make items within a flex container utilize the z-index property
+    while maintaining their static positioning and after playing with it I couldn't 
+    get it working in this page.src:
+    https://www.sitepoint.com/quick-tip-how-z-index-and-auto-margins-work-in-flexbox/
+ */
