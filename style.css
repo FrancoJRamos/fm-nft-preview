@@ -72,41 +72,47 @@
         font-weight:600;
         display:block;
         margin-bottom:10px;
+/*         outline: solid blue 1px;*/ 
+   }
+    .card-icon-target
+    {
+        max-height:max-content;
+        /* something is tagging along in the content of the a container, creating a tail that makes the section taller than the card icon */
+        background-color:hsla(178, 100%, 50%,0);
+        transition: background-color 0.5s;
+        border-radius:15px;
+        /* outline:1px yellow solid; */
         
     }
     .card-icon
     {
-         outline:solid 1px white;
+       /* outline:dashed 1px purple; */
        border-radius:15px;
+       max-width:100%;
+       object-fit: cover;
+       opacity:1;
+       transition: opacity 0.5s;
+       margin-bottom:-5px;
+       
     }
-    .card a img
-    {
-        max-width:100%;
-        height:auto;
-        border-radius:15px;
-    }
-    .icon-interactive /*last step trying to figure out how to overlay this div over the icon image
-    and can then re-enable the opacity rule to match the interactivity*/
+    .card-hover-icon
     {
         
-        width:inherit;
-        height:inherit;
-        /* opacity:0; */
-        transition: opacity 0.5s;
-        background-color: hsla(178, 100%, 50%,50%);
-        outline:solid 1px red;
-        z-index:2;
-        
-    }
-    .icon-interactive img
-   {
         position:absolute;
-        top:42%;
-        left:50%;
-        background-color: hsla(178, 100%, 50%,50%);
+        left: 0; 
+        right: 0; 
+        top:-10%;
+        bottom:0;
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top:auto;
+        margin-bottom:auto;
+        width: 48px;
+        height: 48px;
+        opacity:0; 
+        transition: opacity 0.5s;
         
-   }
-    
+    }
     .purchase-information
     {
         display:flex;
@@ -148,18 +154,26 @@
         border-radius:30px;
     }
 /*Feedback Effects*/
-    .user-information a, .card a
+    a
     {
         transition: color 0.5s;
     }
 
-    .user-information a:hover, .card a:hover
+    a:hover
     {
         color:hsl(178, 100%, 50%);
     }
-    .card-icon:hover .icon-interactive
+    .card-icon-target:hover .card-hover-icon
     {
         opacity:1;
+    }
+    .card-icon-target:hover  .card-icon
+    {
+        opacity:0.5;
+    }
+    .card-icon-target:hover
+    {
+        background-color:hsl(178, 100%, 50%);
     }
 /* To Do List 7.5.22
     implement hover icon behavior
